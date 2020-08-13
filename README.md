@@ -7,16 +7,16 @@ You might take either way:
 ### Pull a image from Public Docker hub
 
 ```
-$ docker pull cico/cico
+$ docker pull cicox/cico
 ```
 
 ### Or, build cico image with provided Dockerfile
 
 ```
-$docker build --rm -t cico/cico .
+$docker build --rm -t cicox/cico .
 ```
 
-For historical versions, please visit [docker hub](https://hub.docker.com/r/cico/cico/)
+For historical versions, please visit [docker hub](https://hub.docker.com/r/cicox/cico/)
 
 ## Prepare data path and cico.conf
 
@@ -49,7 +49,7 @@ To launch cico node:
 $ docker run -d --rm --name cico_node \
              -v ${PWD}/cico.conf:/root/.cico/cico.conf \
              -v /data/cico-data/:/root/.cico/ \
-             cico/cico cicod
+             cicox/cico cicod
 
 ## check docker processed
 $ docker ps
@@ -59,7 +59,7 @@ $ docker run -i --network container:cico_node \
              -v ${PWD}/cico.conf:/root/.cico/cico.conf \
              -v /data/cico-data/:/root/.cico/ \
              -p 127.0.0.1:38890:38890 \
-             cico/cico cico-cli stop
+             cicox/cico cico-cli stop
 ```
 
 `${PWD}/cico.conf` will be used, and blockchain data saved under /data/cico-data/
@@ -72,7 +72,7 @@ Use following docker command to interact with your cico node with `cico-cli`:
 $ docker run -i --network container:cico_node \
              -v ${PWD}/cico.conf:/root/.cico/cico.conf \
              -v /data/cico-data/:/root/.cico/ \
-             cico/cico cico-cli getblockchaininfo
+             cicox/cico cico-cli getblockchaininfo
 ```
 
 For more cico-cli commands, use:
@@ -81,7 +81,7 @@ For more cico-cli commands, use:
 $ docker run -i --network container:cico_node \
              -v ${PWD}/cico.conf:/root/.cico/cico.conf \
              -v /data/cico-data/:/root/.cico/ \
-             cico/cico cico-cli help
+             cicox/cico cico-cli help
 ```
 
 ## RPC from outside container
